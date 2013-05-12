@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="HibernateSpring3" default="local.deploy" basedir=".">
+
+ 	<!-- ===================================================================== -->
+ 	<!-- define global properties                                              -->
+ 	<!-- ===================================================================== -->
+ 	
+	<property name="build.dir" value="build" />
+
+	<property name="webcontent.dir" value="WebContent"/>
+	<property name="wamp.path" value="/Applications/XAMPP/xamppfiles/htdocs" />
+	
+	<!-- ===================================================================== -->
+	<!-- assemble the web application into the correct directory hierarchy     -->
+ 	<!-- ===================================================================== -->
+	<target name="local.deploy" >
+		<tstamp/>
+		<!-- copy webapp specific properties -->
+		
+		<!-- web resources (jsp, html, etc...) -->
+		<copy todir="${wamp.path}/photo-browser">
+			<fileset dir="${webcontent.dir}" />
+		</copy>
+				
+	</target>
+
+    <target name="ant.props"  
+          description="Display Ant's built-in properties">  
+    <echo messsage="------------- ANT PROPERTIES ---------------" />  
+    <echo message="ant.file                  = ${ant.file}" />  
+    <echo message="ant.home                  = ${ant.home}" />  
+    <echo message="ant.java.version          = ${ant.java.version}" />  
+    <echo message="ant.project.name          = ${ant.project.name}" />  
+    <echo message="ant.version               = ${ant.version}" />  
+    <echo message="basedir                   = ${basedir}" />  
+    <echo message="java.class                = ${java.class.path}" />  
+    </target> 
+
+</project>
